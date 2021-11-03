@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Alexander Perets JS</title>
+    </head>   
+    <body>
+
+        <p>1. Составить алгоритм: если введенное число больше 7, то вывести “Привет”
+        </p>
+        <input type="number" id="number" />
+        <button id="Greet">Проверка</button> 
+        <p>2.Составить алгоритм: если введенное имя совпадает с Вячеслав, то вывести “Привет, Вячеслав”, если нет, то вывести "Нет такого имени"
+        </p>
+        <input id="name" />
+        <button id="nameB">Проверка</button>
+        <p>3.Составить алгоритм: на входе есть числовой массив, необходимо вывести элементы массива кратные 3<br>
+            Введите числовой массив через запятую:
+        </p>
+        <input id="ArrayA" /> 
+        <button id="ArrayB">Вывести елементы массива кратные 3</button>
+
+    <script>
+        function number1()
+        {
+            var number = document.getElementById('number').value;
+                if (number>7)
+                {
+                    alert('Привет');
+                    console.log('Привет') //вывод в консоль для обработки данных
+                }
+            }
+                document.getElementById('Greet').addEventListener('click', number1)    
+        
+
+        function nameCheck()
+        {     
+            var name = document.getElementById('name').value;
+                if (name == 'Вячеслав')
+                {
+                    alert('Привет, Вячеслав');
+                    console.log('Привет, Вячеслав') //вывод в консоль для обработки данных
+                }
+                else
+                {
+                    alert('Нет такого имени')
+                    console.log('Нет такого имени') //вывод в консоль для обработки данных
+                }
+        }
+                document.getElementById('nameB').addEventListener('click', nameCheck)      
+
+
+        function Array3(arr)
+            {
+                    /*                 
+                    for (let i=0; i<arr.length;i++)
+                    {
+                        if (arr[i]%3==0)
+                    {
+                        alert(arr[i])
+                        console.log(arr[i]) //вывод в консоль для обработки данных
+                    }
+                    */
+
+                    var input = document.getElementById('ArrayA').value;
+                    var array = input.split(',');
+                    
+                    
+
+                    for (let i=0; i<array.length;i++)
+                    {
+                        parseInt(array[i]);
+
+                        if (array[i] % 3 == 0)
+                        {
+                        alert(array[i])
+                        console.log(array[i]) //вывод в консоль для обработки данных
+                        }
+
+                    }
+        
+            }
+        document.getElementById('ArrayB').addEventListener('click', Array3)    
+            
+
+    </script>
+
+            <p>4.   Дана скобочная последовательность: [((())()(())]] <br>
+                    - Можно ли считать эту последовательность правильной? <br>
+        <b>Нет</b><br>
+        - Если ответ на предыдущий вопрос “нет” - то что необходимо в ней изменить, чтоб она стала правильной?</br>
+            </p>
+
+            <p>Для того что бы данная последовательность оказалась правильной необходимо:<br> 
+                1) Добавить в начало квадратную скобку, или же убрать с конца одну<br>
+                2) Добавить закрывающую круглую скобку перед закрывающими квадратными<br>
+                Правильные варианты: [((())()(()))] , [[((())()(()))]]
+            </p>
+
+    </body>
+    
+</html>
